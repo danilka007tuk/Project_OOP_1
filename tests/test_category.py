@@ -1,26 +1,43 @@
-from src.category import Category
-
-def test_category_smartphones(category_smartphones):
-    assert category_smartphones.name == "Смартфоны"
+def test_category_product(category_product):
+    assert category_product.name == "Смартфоны"
     assert (
-        category_smartphones.description
+        category_product.description
         == "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни"
     )
-    assert len(category_smartphones.products) == 3
-    assert Category.category_count == 1
-    assert Category.product_count == 3
+    assert len(category_product.products_list) == 3
+    assert category_product.category_count == 1
+    assert category_product.product_count == 3
 
 
-def test_category_television(category_televisions):
-    assert category_televisions.name == "Телевизоры"
+def test_category_product_2(category_product_2):
+    assert category_product_2.name == "Телевизоры"
     assert (
-        category_televisions.description
+        category_product_2.description
         == "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
     )
-    assert len(category_televisions.products) == 1
-    assert Category.category_count == 2
-    assert Category.product_count == 4
+    assert len(category_product_2.products_list) == 1
 
+
+# def test_category_smartphones(category_smartphones):
+#     assert category_smartphones.name == "Смартфоны"
+#     assert (
+#         category_smartphones.description
+#         == "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни"
+#     )
+#     assert len(category_smartphones.products) == 3
+#     assert Category.category_count == 1
+#     assert Category.product_count == 3
+#
+#
+# def test_category_television(category_televisions):
+#     assert category_televisions.name == "Телевизоры"
+#     assert (
+#         category_televisions.description
+#         == "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
+#     )
+#     assert len(category_televisions.products_list) == 1
+#     assert Category.category_count == 2
+#     assert Category.product_count == 4
 
 # def test_init(create_category):
 #     assert create_category.name == "Электроника"
@@ -55,8 +72,6 @@ def test_category_television(category_televisions):
 #     assert create_category.get_product_info() == expected_output
 
 
-
-
 #
 # def test_category_product(category_product):
 #     assert category_product.name == "Смартфоны"
@@ -83,5 +98,6 @@ def test_category_television(category_televisions):
 #         "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
 #                     [product4])
 #     task.name = "Телевизоры"
-#     task.description = "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
+# task.description = "Современный телевизор, который позволяет
+# наслаждаться просмотром, станет вашим другом и помощником"
 #     task.product = '55" QLED 4K', "Фоновая подсветка", 123000.0, 7
