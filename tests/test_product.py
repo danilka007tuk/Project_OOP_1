@@ -40,3 +40,18 @@ def test_product_4(product_name_4):
 
 def test_product_4_property(product_name_4):
     assert product_name_4.price == 123000.0
+
+
+def test_product_str(product_str):
+    assert (
+        str(product_str)
+        == "Название продукта: Samsung Galaxy, 180000.0 руб. Остаток: 5шт."
+    )
+
+
+def test_len_add(product_name_1, product_name_2):
+    assert (
+        product_name_1.price * product_name_1.quantity
+        + product_name_2.quantity * product_name_2.price
+        == 2580000.0
+    )
