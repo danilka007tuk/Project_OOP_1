@@ -16,10 +16,10 @@ class Smartphone(Product):
         self.memory = memory
         self.color = color
 
-    def __add__(self, other):
-        if isinstance(other, type(self)):
-            return self._price * self.quantity + other._price * other.quantity
-        raise TypeError
+    # def __add__(self, other):
+    #     if isinstance(other, type(self)):
+    #         return self._price * self.quantity + other._price * other.quantity
+    #     raise TypeError
 
 
 class LawnGrass(Product):
@@ -27,10 +27,10 @@ class LawnGrass(Product):
     germination_period: str
     color: str
 
-    def __add__(self, other):
-        if isinstance(other, type(self)):
-            return self._price * self.quantity + other._price * other.quantity
-        raise TypeError
+    # def __add__(self, other):
+    #     if isinstance(other, type(self)):
+    #         return self._price * self.quantity + other._price * other.quantity
+    #     raise TypeError
 
     def __init__(
         self, name, description, price, quantity, country, germination_period, color

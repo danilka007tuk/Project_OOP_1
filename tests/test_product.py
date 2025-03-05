@@ -1,3 +1,8 @@
+import pytest
+
+from src.product import Product
+
+
 def test_product_1(product_name_1):
     assert product_name_1.name == "Samsung Galaxy S23 Ultra"
     assert product_name_1.description == "256GB, Серый цвет, 200MP камера"
@@ -55,3 +60,17 @@ def test_len_add(product_name_1, product_name_2):
         + product_name_2.quantity * product_name_2.price
         == 2580000.0
     )
+
+
+def test_product_invalid_raises_value_error():
+    with pytest.raises(
+        ValueError, match="Товар с нулевым количеством не может быть добавлен"
+    ):
+        Product("Бракованный товар", "Неверное количество", 1000.0, 0)
+
+
+def test_product_invalid_raises_value_error_2(product_invalid):
+    with pytest.raises(
+        ValueError, match="Товар с нулевым количеством не может быть добавлен"
+    ):
+        Product(*product_invalid)

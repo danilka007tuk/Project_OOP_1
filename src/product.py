@@ -12,14 +12,17 @@ class Product(BaseProduct, ProductMixin):
         self.name = name
         self.description = description
         self._price = price
-        self.quantity = quantity
+        if quantity > 0:
+            self.quantity = quantity
+        else:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         super().__init__()
 
     def __str__(self):
         return f"Название продукта: {self.name}, {self.price} руб. Остаток: {self.quantity}шт."
 
     def __add__(self, other):
-        if isinstance(other, type(self)):
+        if type(self) is type(other):
             return self._price * self.quantity + other._price * other.quantity
         raise TypeError
 
