@@ -43,6 +43,11 @@ def product_name_4():
 
 
 @pytest.fixture
+def product_invalid():
+    return "Бракованный товар", "Неверное количество", 1000.0, 0
+
+
+@pytest.fixture
 def category_product():
     return Category(
         name="Смартфоны",

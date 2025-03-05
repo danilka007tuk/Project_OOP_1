@@ -1,3 +1,6 @@
+from src.category import Category
+
+
 def test_category_product(category_product):
     assert category_product.name == "Смартфоны"
     assert (
@@ -24,3 +27,17 @@ def test_category_len(category_len):
         == "Название категории: Смартфоны, количество продуктов: 3 шт."
     )
     assert len(category_len.products) == 202
+
+
+def test_product_len_price(product_name_1, product_name_2, product_name_3):
+    category1 = Category(
+        "Смартфоны",
+        "Категория смартфонов",
+        [product_name_1, product_name_2, product_name_3],
+    )
+    assert category1.middle_price() == 140333.33333333334
+
+
+def test_product_len_price_null(product_name_1, product_name_2, product_name_3):
+    category_empty = Category("Пустая категория", "Категория без продуктов", [])
+    assert category_empty.middle_price() == 0
